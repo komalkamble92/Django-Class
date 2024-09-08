@@ -1,4 +1,6 @@
 from django.db import models
+#from django.db import migrations, models
+
 
 # Create your models here.
 class ModelName(models.Model): #id
@@ -16,5 +18,9 @@ class Book(models.Model): #id
     
     def __str__(self):
         return self.Name
+class teacher(models.Model):
+    name=models.CharField(max_length=70)
 
+    def __str__(self):
+        return self.name
 
