@@ -1,0 +1,2 @@
+create model with custom admin panel 
+7 data type user in model with custom admin teacher
