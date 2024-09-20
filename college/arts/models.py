@@ -1,4 +1,6 @@
 from django.db import models
+# from django.db import models
+
 
 # Create your models here.
 class ModelName(models.Model): #id
@@ -15,6 +17,7 @@ class Book(models.Model): #id
     
     def __str__(self):
         return self.Name
+        
 class AllFieldType(models.Model):
     # AutoField: It automatically increments.
     auto_field = models.AutoField(primary_key=True)  # Example: auto_field=1 *
@@ -65,7 +68,7 @@ class AllFieldType(models.Model):
     generic_ip_address_field = models.GenericIPAddressField()  # Example: generic_ip_address_field='192.0.2.1'
     
     # # NullBooleanField: Like a BooleanField, but allows NULL as one of the options.
-    # null_boolean_field = models.NullBooleanField()  # Example: null_boolean_field=True
+    # null_boolean_field = models.BooleanField()  # Example: null_boolean_field=True
     
     # PositiveIntegerField: Like an IntegerField, but must be either positive or zero (0).
     positive_integer_field = models.PositiveIntegerField()  # Example: positive_integer_field=123
@@ -115,4 +118,32 @@ class Teacher(models.Model):
 
     def __str__(self):
         return f"{self.Sr_NO}{self.salary}{self.name}{self.joining_date}{self.service_year}{self.permenent}{self.email_id}"
+class Salary(models.Model):
+    #Sr_NO=models.AutoField(primary_key=True)
+    #nameno=models.CharField(max_length=255)
+    monthly=models.DecimalField(max_digits=10, decimal_places=2)
+    stipend=models.DecimalField(max_digits=10, decimal_places=2)
+    compensation=models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.monthly}{self.stipend}{self.compensation}"
+
+class SalaryRecord(models.Model):
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='salary_records')
+    salary = models.ForeignKey(Salary, on_delete=models.CASCADE, related_name='salary_r',blank=True,null=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    date_paid = models.DateField()
+    notes = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.teacher} - {self.amount} on {self.date_paid}"
+
+
+
+
+
+
+
+
+
 

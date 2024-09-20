@@ -7,3 +7,9 @@ admin.site.register(Book)
 admin.site.register(AllFieldType)
 admin.site.register(Student)
 admin.site.register(Teacher)
+admin.site.register(Salary)
+admin.site.register(SalaryRecord)
+
+
+
+
