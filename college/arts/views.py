@@ -19,11 +19,16 @@ def student_list(request):
     students=Student.objects.all()
     return render(request,'student_list.html',{'students':students})
 
+
 def function_list(request):
     if request.method == 'GET':
         return HttpResponse('Student')
     else:
         return HttpResponse('invalid request method')
 
-#def student_count(request):
+# def student_count(request):
+#     students=Student.objects.all().count()
+#     return render(request,'student_list.html',{'students':students})
+
+
     

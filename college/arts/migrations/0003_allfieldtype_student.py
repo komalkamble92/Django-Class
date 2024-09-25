@@ -48,4 +48,4 @@ class Migration(migrations.Migration):
                 ('date_of_birth', models.DateField()),
             ],
         ),
-    ]
+     ]

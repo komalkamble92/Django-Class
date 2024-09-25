@@ -16,6 +16,7 @@ urlpatterns = [
     path('home/',views.home,name='home'),
     path('home2/',views.home2,name='home2'), 
     path('students/',views.student_list,name='student_list'),
+    #path('studentcount/',views.student_count,name='studentcount')
     
     
     # path('about/', api.about, name='about'),
