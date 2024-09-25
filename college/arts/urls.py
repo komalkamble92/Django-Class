@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import * # . = root path
+#from .views import * # . = root path
 from arts.api import * # all classes imported
-
+from . import views
 from . import api
 from arts import api # api.py file imported
 
@@ -10,9 +10,12 @@ from arts import api # api.py file imported
 # {{base url}}/app(prefix)/about/
 
 urlpatterns = [
-    # path('Login/', Login, name='home yguuy jhiiu '),
-    # path(endpoint , filename.classname, discription)
-    
+    #path('Login/', Login, name='home yguuy jhiiu '),
+    #path(endpoint , filename.classname, discription)
+    path('function_list/',views.function_list,name='home'),
+    path('home/',views.home,name='home'),
+    path('home2/',views.home2,name='home2'), 
+    path('students/',views.student_list,name='student_list'),
     
     
     # path('about/', api.about, name='about'),
