@@ -103,7 +103,7 @@ class Student(models.Model):
     last_name = models.CharField(max_length=100)
     age = models.IntegerField() #123
     date_of_birth = models.DateField()
-   # count = models.IntegerField(blank=True,null=True)
+    #count = models.IntegerField(blank=True,null=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
