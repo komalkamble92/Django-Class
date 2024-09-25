@@ -99,10 +99,10 @@ class AllFieldType(models.Model):
 
 
 class Student(models.Model):
-    first_name = models.CharField(max_length=100,null=True)
-    last_name = models.CharField(max_length=100,null=True)
-    age = models.IntegerField(null=True) #123
-    date_of_birth = models.DateField(null=True)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    age = models.IntegerField() #123
+    date_of_birth = models.DateField()
    # count = models.IntegerField(blank=True,null=True)
 
     def __str__(self):
