@@ -22,9 +22,12 @@ urlpatterns = [
     path('add_student/', views.add_student, name='add_student'),
     path('delete_student/<int:student_id>/', views.delete_student, name='delete_student'),
     path('update_student/<int:pk>/', views.update_student, name='update_student'),
+    path('moviecollection/',views.student_list,name='moviecollectiion'),
 
     #path('studentcount/',views.student_count,name='studentcount')
-    
+    path('student/api/', StudentList.as_view(), name='student-list'),
+    path('students/<int:pk>/', StudentDetail.as_view(), name='student-detail'),
+
     
     # path('about/', api.about, name='about'),
     # path('about/', about, name='about'),

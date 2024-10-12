@@ -110,7 +110,7 @@ class Student(models.Model):
         
 class Teacher(models.Model):
     Sr_NO=models.AutoField(primary_key=True)
-    salary=models.BigIntegerField()
+    #salary=models.BigIntegerField()
     name=models.CharField(max_length=255)
     joining_date=models.DateField()
     service_year=models.DurationField()
@@ -118,7 +118,7 @@ class Teacher(models.Model):
     email_id=models.EmailField()
 
     def __str__(self):
-        return f"{self.Sr_NO}{self.salary}{self.name}{self.joining_date}{self.service_year}{self.permenent}{self.email_id}"
+        return f"{self.Sr_NO}"#{self.name}{self.joining_date}{self.service_year}{self.permenent}{self.email_id}"
 class Salary(models.Model):
     #Sr_NO=models.AutoField(primary_key=True)
     #nameno=models.CharField(max_length=255)
@@ -127,18 +127,24 @@ class Salary(models.Model):
     compensation=models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return f"{self.monthly}{self.stipend}{self.compensation}"
+        return f"{self.monthly}"#{self.stipend}{self.compensation}"
 
 class SalaryRecord(models.Model):
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='salary_records')
-    salary = models.ForeignKey(Salary, on_delete=models.CASCADE, related_name='salary_r',blank=True,null=True)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    date_paid = models.DateField()
-    notes = models.TextField(blank=True, null=True)
+   teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='salary_records')
+  # salary = models.ForeignKey(Salary, on_delete=models.CASCADE, related_name='salary_r',blank=True,null=True)
+   amount = models.DecimalField(max_digits=10, decimal_places=2)
+   date_paid = models.DateField()
+   notes = models.TextField(blank=True, null=True)
 
-    def __str__(self):
-        return f"{self.teacher} - {self.amount} on {self.date_paid}"
+   def __str__(self):
+       return f"{self.teacher}"# - {self.amount} on {self.date_paid}"
+# class MovieCollection(models.Model):
+#     title=models.TextField(blank =True)
+#     genre=models.TextField(blank = True)
+#     release_date=models.DateTimeField(blank=True)
 
+#     def __str__(self):
+#         return self.title
 
 
 

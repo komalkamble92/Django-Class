@@ -9,6 +9,9 @@ admin.site.register(Student)
 admin.site.register(Teacher)
 admin.site.register(Salary)
 admin.site.register(SalaryRecord)
+admin.site.register(MovieCollection)
+
+
 
 
 
